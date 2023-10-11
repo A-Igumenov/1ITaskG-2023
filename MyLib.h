@@ -2,9 +2,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <numeric>
 
 using std::cout;
+using std::cin;
+using std::endl;
 using std::string;
 using std::vector;
 
@@ -17,14 +19,16 @@ class Person {
 	float Final;
 public:
 	Person();
-	Person(string N, string S, vector <int> H,
-		int E, float F);
+	Person(string N, string S, 
+		vector <int> H, int E, float F);
 	Person& operator=(const Person& P);
 	Person (const Person& P);
 	~Person();
 	// Setters
-	inline void SetName(string N) { Name = N; }
+	inline void SetName(string N) { 
+		Name = N; }
 	//overloaded cin
 	//overloaded cout
 	//Final poin calculation from average or median
+	void printPerson();
 };

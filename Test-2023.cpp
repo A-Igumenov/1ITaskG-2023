@@ -5,8 +5,33 @@
 
 int main()
 {
-    cout << minimum(5,8);
-
+    vector<Person> Group;
+    for (int j = 0; j < 3; j++) {
+        string N, S;
+        int W, n, E;
+        vector <int> temp;
+        float Fin;
+        cout << "Plese input Person name and surname: ";
+        cin >> N >> S;
+        cout << "Plese input how many works has Person: ";
+        cin >> n;
+        for (int i = 0; i < n; i++)
+        {
+            cout << "Plese input work " << i + 1 << " evaluation point: ";
+            cin >> W;
+            temp.push_back(W);
+        }
+        cout << "Plese input Final exam result: ";
+        cin >> E;
+        Fin = 0.4 * (std::accumulate(temp.begin(), temp.end(), 0.0) / 
+            temp.size()) + 0.6 * E;
+        Person A(N, S, temp, E, Fin);
+        Group.push_back(A);
+        A.~Person();
+        temp.clear();
+    }
+    for (auto &B : Group) B.printPerson();
+    system("pause");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

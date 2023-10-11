@@ -42,3 +42,11 @@ Person::~Person() {
 	Exam = 0;
 	Final = 0.0;
 };
+
+void Person::printPerson() {
+	//cout << Name << " : " << Surname << " | " << Final << endl;
+	cout << Name << " : " << Surname << " | ";
+	for (auto& ref : HW) cout << ref << " : ";
+	cout << Exam << " ; final points: " 
+		<< Final << endl;
+}
